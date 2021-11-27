@@ -2,6 +2,8 @@
 
 Taking the advantage of [papermill](https://github.com/nteract/papermill) and [testbook](https://github.com/nteract/testbook) , we can use the existing jupyter notebooks to convert them into as pipelines and also perform unit testings without making any changes in notebook
 
+![pipeline](img/notebook-as-pipeline.png)
+
 ## Pipeline  
 
 Below will be the folder structure of the project
@@ -34,12 +36,12 @@ Below will be the folder structure of the project
 
 The following are the components for the pipeline
 <b>
-* notebooks/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-- containing the notebooks to run
-* parameters.yaml -- variables parameterized in notebooks will be stored in this and will be passed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;during runtime
-* runspec.yaml &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- this will be used to store the order in which the jupyter notebooks should run &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and also contains the run time configurations,  
-* [executor.py]() &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--  python program which executes the notebooks by taking the inputs from runspec and parameters files
+* [notebooks/](notebooks/) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-- containing the notebooks to run
+* [parameters.yaml](parameters.yaml) -- variables parameterized in notebooks will be stored in this and will be passed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;during runtime
+* [runspec.yaml](runspec.yaml) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- this will be used to store the order in which the jupyter notebooks should run &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and also contains the run time configurations,  
+* [executor.py](executor.py) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--  python program which executes the notebooks by taking the inputs from runspec and parameters files
 * requirements.txt &nbsp;-- python dependencies for workflow
-* Dockerfile &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- dockerfile to run pipeline
+* [Dockerfile](Dockerfile) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- dockerfile to run pipeline
 </b>
 
 Papermill can take inputs from and send output notebooks to local, http , s3 , azure and gcp storage. In the demo we used local storage
