@@ -1,0 +1,6 @@
+Dockerfile
+Dockerfile.test
+README.md
+outputs
+*/.ipynb_checkpoints
+*/__pycache__
